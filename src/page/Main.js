@@ -61,12 +61,7 @@ const Main = () => {
       <div className="percent-box">
         <span className="percent-value">{myData.percent}</span>
         <span className="percent">%</span>
-        <div className="current">
-          {myData.current
-            .toString()
-            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
-          원 남음
-        </div>
+        <div className="current">{myData.current}원 남음</div>
       </div>
       <div className="expense-input">
         <form onSubmit={handleSubmit}>
