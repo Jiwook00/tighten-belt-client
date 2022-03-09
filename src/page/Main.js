@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./Main.css";
+import { HOST } from "../config";
 
 const Main = () => {
   const [myData, setMyData] = useState({});
@@ -30,7 +31,7 @@ const Main = () => {
   };
 
   const getAccount = async () => {
-    const data = await axios.get("http://localhost:8080/accounts/mine", {
+    const data = await axios.get(`${HOST}/accounts/mine`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -41,7 +42,7 @@ const Main = () => {
 
   const postExpense = async (expense) => {
     const result = await axios.post(
-      "http://localhost:8080/accounts",
+      `${HOST}/accounts`,
       { expense },
       {
         headers: {

@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { HOST } from "../config";
 
-const Login = ({ setLogin, isLogin }) => {
+const Login = ({ setLogin }) => {
   let history = useHistory();
 
   const [nickname, setNickname] = useState("");
@@ -25,7 +26,7 @@ const Login = ({ setLogin, isLogin }) => {
 
   const postSingin = async (nickname, password) => {
     console.log(`${nickname} . . ${password}`);
-    const result = await axios.post("http://localhost:8080/users/singin", {
+    const result = await axios.post(`${HOST}/users/singin`, {
       nickname,
       password,
     });
