@@ -7,31 +7,18 @@ import { useEffect, useState } from "react";
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
-  // const isLogin = () => {
-  //   console.log("ddd");
-  //   const token = localStorage.getItem("token");
-  //   if (!token) {
-  //     <Route element={<Navigate replace to="/" />} />;
-  //   }
-  // };
 
   useEffect(() => {
-    console.log("1111is login", isLogin);
-
     const token = localStorage.getItem("token");
-    console.log("token : ", token);
     if (token) {
       setIsLogin(true);
-    } else {
-      console.log("토큰 없음");
     }
-    console.log("is login", isLogin);
   }, []);
 
   return (
     <div className="frame">
       <dev className="header">
-        <div className="logo">~2022.04.09</div>
+        <div className="date">2022.03.10 ~ 2022.04.09</div>
         <div>
           <Switch>
             <Route

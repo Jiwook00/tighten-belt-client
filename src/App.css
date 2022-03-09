@@ -1,12 +1,35 @@
+@font-face {
+  font-family: "Cafe24Ssurround";
+  src: url("https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/Cafe24Ssurround.woff")
+    format("woff");
+}
+
+* {
+  font-family: "Cafe24Ssurround";
+}
+
 .frame {
   width: 100vw;
   height: 100vh;
 
   max-width: 450px;
 
+  background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/159d32a6-2702-4546-b5e4-f6d062c081bc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220309%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220309T161002Z&X-Amz-Expires=86400&X-Amz-Signature=23035b4c610c02e6b7591f0c3a4fe85e6df7b3275b47fc9edd6636c795fb9429&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject");
   background-color: bisque;
   background-position: center;
   background-size: cover;
 
   margin: auto;
+}
+
+.date {
+  color: #3f3732;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 5vh;
+  font-size: 25px;
+  padding: 15px;
 }

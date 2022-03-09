@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import "./Main.css";
 
 const Main = () => {
   const [myData, setMyData] = useState({});
@@ -57,19 +58,30 @@ const Main = () => {
 
   return (
     <div>
-      <div className="percent">{myData.percent} %</div>
-      <div className="current">{myData.current}원 남음</div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="number"
-          name="expense"
-          value={expense}
-          onChange={handleChange}
-        />
-        <button type="submit" disabled={disabled}>
-          저장하기
-        </button>
-      </form>
+      <div className="percent-box">
+        <span className="percent-value">{myData.percent}</span>
+        <span className="percent">%</span>
+        <div className="current">
+          {myData.current
+            .toString()
+            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+          원 남음
+        </div>
+      </div>
+      <div className="expense-input">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="number"
+            name="expense"
+            value={expense}
+            placeholder={"티끌 모아 티끌 "}
+            onChange={handleChange}
+          />
+          <button type="submit" disabled={disabled}>
+            저장하기
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

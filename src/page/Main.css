@@ -1,0 +1,57 @@
+.percent-value {
+  color: #3f3732;
+  font-size: 165px;
+
+  position: fixed;
+  bottom: 60%;
+  left: 18%;
+}
+
+.percent {
+  color: #3f3732;
+  font-size: 53px;
+  position: fixed;
+  bottom: 65%;
+  left: 80%;
+}
+
+.current {
+  color: #938c5c;
+  font-size: 33px;
+  position: fixed;
+  bottom: 58%;
+  left: 29%;
+}
+
+input {
+  width: 200px;
+  height: 47px;
+
+  position: absolute;
+  left: 15%;
+  bottom: 40%;
+  font-size: 30px;
+  text-align: right;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  background-color: #3f3732;
+
+  color: white;
+
+  font-size: 18px;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  bottom: 340px;
+  left: calc(70% - 1px);
+}
