@@ -23,7 +23,7 @@
   left: 29%;
 }
 
-input {
+.expense-input {
   width: 200px;
   height: 47px;
 
@@ -34,7 +34,7 @@ input {
   text-align: right;
 }
 
-button {
+.expense-btn {
   width: 100px;
   height: 50px;
   background-color: #3f3732;

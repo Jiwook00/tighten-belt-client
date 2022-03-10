@@ -36,7 +36,6 @@ const Main = () => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log("data : ", data);
     setMyData(data.data);
   };
 
@@ -64,16 +63,17 @@ const Main = () => {
         <span className="percent">%</span>
         <div className="current">{myData.current}원 남음</div>
       </div>
-      <div className="expense-input">
+      <div>
         <form onSubmit={handleSubmit}>
           <input
+            className="expense-input"
             type="number"
             name="expense"
             value={expense}
             placeholder={"티끌 모아 티끌 "}
             onChange={handleChange}
           />
-          <button type="submit" disabled={disabled}>
+          <button type="submit" className="expense-btn" disabled={disabled}>
             저장하기
           </button>
         </form>

@@ -24,7 +24,7 @@ const App = () => {
             <Route
               path="/login"
               render={() => {
-                console.log("render islogin", isLogin);
+                console.log("islogin", isLogin);
                 if (isLogin) {
                   return <Redirect to="/main" />;
                 } else {
@@ -32,7 +32,16 @@ const App = () => {
                 }
               }}
             />
-            <Route path="/main" render={() => <Main isLogin={isLogin} />} />
+            <Route
+              path="/main"
+              render={() => {
+                if (isLogin) {
+                  return <Main isLogin={isLogin} />;
+                } else {
+                  return <Login setIsLogin={setIsLogin} isLogin={isLogin} />;
+                }
+              }}
+            />
             <Route path="/rank" render={() => <Rank isLogin={isLogin} />} />
             <Redirect path="/" to="/login" />
           </Switch>
