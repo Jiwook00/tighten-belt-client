@@ -2,11 +2,13 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./Main.css";
 import { HOST } from "../config";
+import RankItem from "../compoments/RankItem";
 
 const Main = () => {
   const [myData, setMyData] = useState({});
   const [expense, setExpense] = useState("");
   const [disabled, setDisabled] = useState(false);
+  const [userData, setUserData] = useState([]);
 
   const handleChange = ({ target: { value } }) => setExpense(value);
   const token = localStorage.getItem("token");
@@ -39,6 +41,17 @@ const Main = () => {
     setMyData(data.data);
   };
 
+  const getUserData = async () => {
+    const data = await axios.get(`${HOST}/accounts/rank`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log("datadata", data);
+
+    setUserData(data.data);
+  };
+
   const postExpense = async (expense) => {
     const result = await axios.post(
       `${HOST}/accounts`,
@@ -54,6 +67,7 @@ const Main = () => {
 
   useEffect(() => {
     getAccount();
+    getUserData();
   }, {});
 
   return (
@@ -77,6 +91,11 @@ const Main = () => {
             저장하기
           </button>
         </form>
+      </div>
+      <div className="rank-list">
+        {userData.map((data) => (
+          <RankItem key={data.id} data={data} />
+        ))}
       </div>
     </div>
   );
