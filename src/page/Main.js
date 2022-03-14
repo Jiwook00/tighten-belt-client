@@ -61,9 +61,9 @@ const Main = () => {
       <div className="percent-box">
         <span className="percent-value">{myData.percent}</span>
         <span className="percent">%</span>
-        <div className="current">{myData.current}원 남음</div>
+        <span className="current">{myData.current}원 남음</span>
       </div>
-      <div>
+      <div className="submit-box">
         <form onSubmit={handleSubmit}>
           <input
             className="expense-input"
