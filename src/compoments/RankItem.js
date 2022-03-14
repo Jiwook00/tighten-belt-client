@@ -1,4 +1,5 @@
 import React from "react";
+import "./RankItem.css";
 
 const RankItem = ({ data }) => {
   console.log("data: ", data);

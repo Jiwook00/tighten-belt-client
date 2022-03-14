@@ -3,7 +3,7 @@
   display: flex;
   font-size: 53px;
   padding-top: 100px;
-  padding-left: 100px;
+  padding-left: 60px;
 }
 
 .percent-value {
@@ -30,7 +30,7 @@
   display: flex;
   font-size: 53px;
   padding-top: 40px;
-  padding-left: 118px;
+  padding-left: 50px;
 }
 
 .expense-input {
@@ -58,6 +58,9 @@
 }
 
 .rank-list {
-  padding: 100px;
-  font-size: 20px;
+  margin-top: 130px;
+  border-top: 1px solid;
+  padding-top: 18px;
+  padding-left: 30px;
+  font-size: 23px;
 }
